@@ -4,18 +4,18 @@ with
         *
         from {{source("erp_person", "address")}}
     ),
-     rename_address as (
+     renomeado_address as (
         select
-            cast(addressid as int) as pk_address
-            ,cast(addressline1 as string) as address_line
-            ,cast(addressline2 as string) as adress_complement
-            ,cast(city as string) as city
-            ,cast(stateprovinceid as int) as fk_state_province
-            ,cast(postalcode as string) as postal_code
-            ,cast(spatiallocation as string) as geolocation
-            ,cast(rowguid as string) as row_id
-            ,cast(modifieddate as date) as modified_date
+            cast(addressid as int) as pk_endereco
+            ,cast(addressline1 as string) as linha1_endereco
+            ,cast(addressline2 as string) as linha2_endereco
+            ,cast(city as string) as cidade
+            ,cast(stateprovinceid as int) as fk_estado
+            ,cast(postalcode as string) as codigo_postal
+            ,cast(spatiallocation as string) as localizacao
+            ,cast(rowguid as string) as identificador_linha
+            ,cast(modifieddate as date) as data_modificacao
         from fonte_address
     )
  
-select * from rename_address
+select * from renomeado_address

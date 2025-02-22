@@ -1,25 +1,25 @@
 with
-    source_person as (
+    fonte_person as (
         select
         *
         from {{source("erp_person", "person")}}
     ),
-     rename_person as (
+     renomeado_person as (
         select
-            cast(businessentityid as int) as pk_fk_business_entity
-            ,cast(persontype as string) as person_type
-            ,cast(namestyle as boolean) as name_style
-            ,cast(title as string) as title
-            ,cast(firstname as string)
-            ,cast(middlename as string)
-            ,cast(lastname as string)
-            ,cast(suffix as string)
-            ,cast(emailpromotion as int) as email_promo
-            ,cast(additionalcontactinfo as string) as contact_info
-            ,cast(demographics as string)
-            ,cast(rowguid as string) as row_id
-            ,cast(modifieddate as date) as modified_date
-        from source_person
+            cast(businessentityid as int) as pk_fk_entidade_negocio
+            ,cast(persontype as string) as tipo_pessoa
+            ,cast(namestyle as boolean) as estilo_nome
+            ,cast(title as string) as titulo
+            ,cast(firstname as string) primeiro_nome
+            ,cast(middlename as string) nome_meio
+            ,cast(lastname as string) ultimo_nome
+            ,cast(suffix as string) sufixo
+            ,cast(emailpromotion as int) as promocao_email
+            ,cast(additionalcontactinfo as string) as info_adicional_contato
+            ,cast(demographics as string) as demografia
+            ,cast(rowguid as string) as identificador_linha
+            ,cast(modifieddate as date) as data_modificacao
+        from fonte_person
     )
  
-select * from rename_person
+select * from renomeado_person
