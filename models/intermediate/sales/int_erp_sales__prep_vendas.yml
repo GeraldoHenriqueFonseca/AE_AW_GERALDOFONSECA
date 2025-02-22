@@ -1,0 +1,75 @@
+models:
+  - name: prep_vendas
+    description: Prep do Modulo de Vendas do sistema Adventure Works
+    columns:
+      - name: SEQ_INT_VENDAS
+        description: 'Sequence da Prep Vendas'
+        data_tests:
+          - unique
+          - not_null
+      - name: PK_ORDEM_VENDA
+        description: 'PK da tabela ordem de venda'
+        data_tests:
+          - not_null
+      - name: NUMERO_REVISAO
+        description: 'Numero de revisao da venda'
+      - name: DATA_COMPRA
+        description: 'Data da Compra'
+      - name: DATA_VENCIMENTO
+        description: 'Data do vencimento da venda'
+      - name: DATA_ENVIO
+        description:  'Data envio da venda'
+      - name: STATUS
+        description: 'Status da venda'
+      - name: IND_ORDEM_ONLINE
+        description: 'Indicador de ordem online da venda'
+      - name: NUMERO_ORDEM_COMPRA
+        description: 'Numero de ordem de compra'
+      - name: NUMERO_CONTA
+        description: 'Numero da conta da venda'
+      - name: FK_CLIENTE
+        description: 'PK da tabela cliente'
+      - name: FK_VENDEDOR
+        description: 'PK da tabela vendedor'
+      - name: FK_TERRITORIO
+        description: 'PK da tabela territorio'
+      - name: FK_ENDERECO_COBRANCA
+        description: 'PK da tabela endereco cobranca'
+      - name: FK_ENDERECO_ENVIO
+        description: 'PK da tabela endereco envio'
+      - name: FK_METODO_ENVIO
+        description: 'PK da tabela metodo envio'
+      - name: FK_CARTAO_CREDITO
+        description: 'PK da tabela cartao de credito'
+      - name: CODIGO_APROVACAO_CARTAO_CREDITO
+        description: 'Codigo de aprovacao da venda no cartao de credito'
+      - name: FK_TAXA_CAMBIO
+        description: 'PK da tabela taxa de cambio'
+      - name: SUBTOTAL
+        description: 'Subtotal do valor de venda'
+      - name: TAXAMT
+        description: 'Taxa amt da venda'
+      - name: FRETE
+        description: 'Valor do frete da venda'
+      - name: TOTAL_DEVIDO
+        description: 'Total devido da venda'
+      - name: COMENTARIO
+        description: 'Comentário relacionado a venda'
+      - name: DATA_MODIFICACAO_SOLICITACAO_VENDA
+        description: 'Data de modificacao solicitacao venda'
+      - name: FK_DETALHE_PEDIDO_VENDA
+        description: 'PK da tabela detalhe pedido venda'
+      - name: NUMERO_RASTREAMENTO
+        description: 'Numero de rastreamento da venda'
+      - name: QUANTIDADE_PEDIDO
+        description: 'Quantidade de pedidos da venda'
+      - name: FK_PRODUTO
+        description: 'PK da tabela produto'
+      - name: FK_OFERTA_ESPECIAL
+        description: 'Identificar da oferta especial'
+      - name: PRECO_UNITARIO
+        description: 'Preco unitario do produto da venda'
+      - name: DESCONTO_PRECO_UNITARIO
+        description: 'Desconto concedido no preco unitario da venda'
+      - name: DATA_MODIFICACAO_DETALHE_VENDA
+        description: 'Data de modificacao dos dados da detalhe venda'

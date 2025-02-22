@@ -1,0 +1,24 @@
+models:
+  - name: prep_razao_vendas
+    description: Prep do Modulo de Razao de Vendas do sistema Adventure Works
+    columns:
+      - name: SEQ_INT_RAZAO_VENDAS
+        description: 'Sequence da Prep Razao de Vendas'
+        data_tests:
+          - unique
+          - not_null
+      - name: PK_ORDEM_VENDA
+        description: 'Identificador da ordem venda'
+        data_tests: 
+          - not_null       
+      - name: PK_FK_RAZAO_VENDA
+        data_tests:
+          - not_null
+        description: 'Identificador da razao da venda'
+      - name: NOME
+        description: 'Descricao da razao da venda'
+      - name: TIPO_RAZAO
+        description: 'Tipo da razao da venda'
+      - name: DATA_MODIFICACAO
+        description: 'Data modificacao da venda'
+    

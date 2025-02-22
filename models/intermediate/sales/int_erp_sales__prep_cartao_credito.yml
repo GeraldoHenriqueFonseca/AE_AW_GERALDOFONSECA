@@ -1,0 +1,23 @@
+models:
+  - name: prep_cartao_credito
+    description: Prep do Modulo de Cartao de Credito do sistema Adventure Works
+    columns:
+      - name: PK_CARTAO_CREDITO
+        description: 'Identificador do cartao de credito'
+        data_tests:
+          - unique
+          - not_null       
+      - name: TIPO_CARTAO,
+        description: 'Tipo do Cartao de Credito'
+      - name: NUMERO_CARTAO,
+        description: 'Numero do Cartao de Credito'
+      - name: MES_EXPIRACAO,
+        description: 'Mes de expiracao do cartao de credito'
+      - name: ANO_EXPIRACAO,
+        description: 'Ano de expiracao do cartao de credito'
+      - name: DATA_MODIFICACAO_CARTAO,
+        description: 'Data de modificaco do cartao de credito'
+      - name: PK_ENTIDADE_NEGOCIO,
+        description: 'Identificador da pessoa do cartao de credito'
+      - name: DATA_MODIFICACAO_PESSOA
+        description: 'Data de modificacao do registro da pessoa'

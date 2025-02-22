@@ -1,0 +1,58 @@
+models:
+  - name: prep_produto
+    description: Prep do Modulo de Produto do sistema Adventure Works
+    columns:
+      - name: PK_PRODUTO
+        description: 'Identificador do Produto'
+        data_tests:
+          - unique
+          - not_null    
+      - name: NOME_PRODUTO
+        description: 'Nome do Produto'
+      - name: NUMERO_PRODUTO
+        description: 'Numero do Produto'
+      - name: FLAG
+        description: 'Marcador do Produto'
+      - name: FLAG_FINALIZADO
+        description: 'Marcador de Produto Finalizado'
+      - name: COR
+        description: 'Cor do Produto'
+      - name: NIVEL_ESTOQUE_SEGURO
+        description: 'Nível de estoque seguro do produto'
+      - name: PONTO_REORDENACAO
+        description: 'Ponto de reordenacao do produto'
+      - name: CUSTO_PADRAO
+        description: 'Custo Padrao do Produto'
+      - name: LISTA_PRECO
+        description: 'Lista de preço dos produtos'
+      - name: TAMANHO
+        description: 'Tamanho do produto'
+      - name: TAMANHO_UNITARIO_CODIGO_MEDIDA
+        description: 'Tamanho unitario do codigo de medida'
+      - name: PESO_UNITARIO_CODIGO_MEDIDA
+        description: 'Peso unitario codigo medida'
+      - name: PESO
+        description: 'Peso do produto'
+      - name: DIAS_PRA_PRODUCAO
+        description: 'Dias para producao'
+      - name: LINHA_PRODUTO
+        description: 'Linha do Produto'
+      - name: CLASSE
+        description: 'Classe do Produto'  
+      - name: ESTILO
+        description: 'Estilo do Produto'
+      - name: FK_SUBCATEGORIA_PRODUTO
+        description: 'Fk da tabela subcategoria do Produto'
+      - name: MODELO_PRODUTO
+        description: 'Modelo do Produto'
+      - name: DATA_INICIO_VENDA
+        description: 'Data inicio da venda'
+      - name: DATA_FIM_VENDA 
+        description: 'Data Fim Venda'
+      - name: DATA_DESCONTINUACAO
+        description: 'Data descontinuacao'
+      - name: IDENTIFICADOR_LINHA 
+        description: 'Identificador da linha do registro'
+      - name: DATA_MODIFICACAO  
+        description: 'Data de modificacao'            
+
