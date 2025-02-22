@@ -1,11 +1,8 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-<<<<<<< HEAD
-name: 'aw_ae_project'
-=======
+
 name: 'project_indicium_academy_aw'
->>>>>>> 3df986662b3afbfc9191d055988441fe7aa2ab63
 version: '1.0.0'
 config-version: 2
 
@@ -38,15 +35,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-<<<<<<< HEAD
- aw_ae_project:
-    # Applies to all files under models/staging/
-    staging:
-      +materialized: view
-      +schema: stg
-    # Applies to all files under models/intermediate/
-    intermediate:
-=======
   project_indicium_academy_aw:
     # Applies to all files under models/
     intermediate:
@@ -57,7 +45,6 @@ models:
       +materialized: table
     staging:
       +schema: stg
->>>>>>> 3df986662b3afbfc9191d055988441fe7aa2ab63
       +materialized: table
       +schema: int
     # Applies to all files under models/marts/
