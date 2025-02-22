@@ -19,6 +19,8 @@ models:
         description: 'Nome do Meio'
       - name: ULTIMO_NOME
         description: 'Ultimo Nome'
+      - name: 'NOME_COMPLETO'
+        description: 'Primeiro e último nome do cliente concatenado'
       - name: SUFIXO
         description: 'Sufixo'
       - name: PROMOCAO_EMAIL

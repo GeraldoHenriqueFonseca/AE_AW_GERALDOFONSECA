@@ -13,6 +13,7 @@ with
             ,cast(firstname as string) primeiro_nome
             ,cast(middlename as string) nome_meio
             ,cast(lastname as string) ultimo_nome
+            ,cast(concat(firstname, ' ', lastname) as string) nome_completo
             ,cast(suffix as string) sufixo
             ,cast(emailpromotion as int) as promocao_email
             ,cast(additionalcontactinfo as string) as info_adicional_contato
