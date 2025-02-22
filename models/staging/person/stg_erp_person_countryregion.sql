@@ -1,15 +1,15 @@
 with
-    source_countryregion as (
+    fonte_countryregion as (
         select
         *
         from {{source("erp_person", "countryregion")}}
     ),
-    rename_countryregion as (
+    renomeado_countryregion as (
         select
-            cast(countryregioncode as string) as pk_country_code
-            ,cast(name as string) as country_name
-            ,cast(modifieddate as date) as modified_date
-        from source_countryregion
+            cast(countryregioncode as string) as pk_codigo_pais
+            ,cast(name as string) as nome
+            ,cast(modifieddate as date) as data_modificacao
+        from fonte_countryregion
     )
  
 select * from renomeado_countryregion

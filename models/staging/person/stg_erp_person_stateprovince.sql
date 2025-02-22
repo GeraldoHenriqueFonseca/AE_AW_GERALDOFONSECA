@@ -1,20 +1,20 @@
 with
-    source_stateprovince as (
+    fonte_stateprovince as (
         select
         *
         from {{source("erp_person", "stateprovince")}}
     ), 
-    rename_stateprovince as (
+    renomeado_stateprovince as (
         select
-            cast(stateprovinceid as int) as pk_state
-            ,cast(stateprovincecode as string) as state_code
-            ,cast(countryregioncode as string) as fk_country_code
-            ,cast(isonlystateprovinceflag as boolean) as flag_unique_state_province
-            ,cast(name as string) as province_name
-            ,cast(territoryid as int) as fk_territory
-            ,cast(rowguid as string) as row_id
-            ,cast(modifieddate as date) as modified_date
-        from source_stateprovince
+            cast(stateprovinceid as int) as pk_estado
+            ,cast(stateprovincecode as string) as codigo_estado
+            ,cast(countryregioncode as string) as fk_codigo_pais
+            ,cast(isonlystateprovinceflag as boolean) as ind_unico_estato
+            ,cast(name as string) as nome
+            ,cast(territoryid as int) as fk_territorio
+            ,cast(rowguid as string) as identificador_linha
+            ,cast(modifieddate as date) as data_modificacao
+        from fonte_stateprovince
     )
  
-select * from rename_stateprovince
+select * from renomeado_stateprovince
