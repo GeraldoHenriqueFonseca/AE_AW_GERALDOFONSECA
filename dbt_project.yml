@@ -46,8 +46,3 @@ models:
     staging:
       +schema: stg
       +materialized: table
-      +schema: int
-    # Applies to all files under models/marts/
-    marts:
-      +materialized: table
-      +schema: marts
