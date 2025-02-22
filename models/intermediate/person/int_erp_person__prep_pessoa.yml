@@ -1,0 +1,34 @@
+models:
+  - name: prep_pessoa
+    description: Prep do Modulo de Person do sistema Adventure Works
+    columns:
+      - name: PK_FK_ENTIDADE_NEGOCIO
+        description: 'Identificador da Pessoa'
+        data_tests:
+          - unique
+          - not_null
+      - name: TIPO_PESSOA
+        description: 'Tipo da Pessoa'
+      - name: ESTILO_NOME
+        description: 'Estilo do Nome'
+      - name: TITULO
+        description: 'Titulo'
+      - name: PRIMEIRO_NOME
+        description: 'Primeiro Nome'
+      - name: NOME_MEIO
+        description: 'Nome do Meio'
+      - name: ULTIMO_NOME
+        description: 'Ultimo Nome'
+      - name: SUFIXO
+        description: 'Sufixo'
+      - name: PROMOCAO_EMAIL
+        description: 'Email cadastrado pra envio de promoções'
+      - name: INFO_ADICIONAL_CONTATO
+        description: 'Informação adicional para contato'
+      - name: DEMOGRAFIA
+        description: 'Demografia'
+      - name: IDENTIFICADOR_LINHA
+        description: 'Identificador da linha no banco'
+      - name: DATA_MODIFICACAO  
+        description:   'Data de modificacao do registro'         
+

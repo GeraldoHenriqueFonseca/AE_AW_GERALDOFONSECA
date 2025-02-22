@@ -1,0 +1,12 @@
+sources:
+  - name: erp_product
+    description: Fontes para a criação do módulo product
+    schema: raw_adventure_works
+    database: fea24_11
+    tables: 
+      - name: product
+        columns:
+          - name: productid
+            data_tests:
+              - unique
+              - not_null
