@@ -1,0 +1,34 @@
+sources:
+  - name: erp_person
+    description: Fontes para a criação do módulo pessoa
+    schema: raw_adventure_works
+    database: fea24_11
+    tables:
+      - name: person
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: address
+        columns:
+          - name: addressid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: stateprovince
+        columns:
+          - name: stateprovinceid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: countryregion
+        columns:
+          - name: countryregioncode
+            data_tests:
+              - unique 
+              - not_null
+        
