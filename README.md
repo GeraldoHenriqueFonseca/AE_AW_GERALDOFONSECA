@@ -38,9 +38,22 @@ Além dessas pessoas, o diretor de TI, Nilson Ramos, é responsável por garanti
     - Intermediate para a preparação dos dados para a criação dos fatos e dimensões
     - Marts que são as dimensões e fato criada para consumo de BI
 
+- Foram criadas as dimensões:
+   - Relacionadas ao clientes:
+      - DIM_PESSOA
+      - DIM_ENDERECO
+   - Relacionadas a vendas:
+      - DIM_CARTAO_CREDITO
+      - DIM_RAZAO_VENDA
+      - DIM_SOLICITACAO_VENDA
+   - Relacioanda ao produto/pedido: 
+      - DIM_PRODUTO
+- Foi criada a FATO_VENDA para quando relacionar com as dimensões consiga responder as perguntas que o negócio pediu para estar no dashboard.
+
+
 - Foi criado testes para avaliar se havia duplicação e chave nulas, caso tive algum problema não seria carregado dados errados para os marts
  
- - Além dos testes de unicade e não nulo foi feito um teste para avaliar se a carga dos dados tinha sido feita corretamente. Fez o cálculo das vendas brutas no ano de 2011 e essa conta deveria ser de $12.646.112,16. Caso não obtesse esse valor era gerado um aviso de erro.
+ - Além dos testes de unicidade e não nulo foi feito um teste para avaliar se a carga dos dados tinha sido feita corretamente. Fez o cálculo das vendas brutas no ano de 2011 e essa conta deveria ser de $12.646.112,16. Caso não obtesse esse valor era gerado um aviso de erro.
 
 #### 2. Construção do dashboard
 - Power BI foi conecatado ao Snowflake e consumiu as tabelas de dimensões e fatos do marts
