@@ -4,7 +4,7 @@ models:
   - name: fact_sales_detail
     description: "Esta é uma tabela para produtos individuais associados a um pedido de venda específico. Tem os detalhamento dos produtos vendidos."
     columns:
-      - name: salesorderid
+      - name: sales_order_id
         description: "Chave estrangeira para SalesOrderHeader.SalesOrderID."
         tests:  
           - not_null
