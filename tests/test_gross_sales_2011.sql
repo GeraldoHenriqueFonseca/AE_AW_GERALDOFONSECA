@@ -4,13 +4,36 @@
     conforme solicitação do CEO Carlos Silveira
 */
 
-with vendas_brutas_2011 as (
-    select 
-    sum(preco_unitario * quantidade_pedido) as soma_total_bruto 
-    from {{ref("int_erp_sales_prep_vendas")}}
-    where cast(data_compra as date) between '2011-01-01' and '2011-01-31'
-)
+with 
+    filtered_sales_header as (
+        select 
+            salesorderid
+            , orderdate
+        from 
+            {{ ref('fact_sales_header') }}
+        where 
+            extract(year from orderdate) = 2011
+    )
 
-select soma_total_bruto
-from vendas_brutas_2011
-where soma_total_bruto not between 12646111.00 and 12646113.00
+    , sales_2011 as (
+        select 
+            sd.salesorderid
+            , sd.orderqty * sd.unitprice as gross_sales
+        from 
+            {{ ref('fact_sales_detail') }} sd
+        join 
+            filtered_sales_header sh
+        on 
+            sd.salesorderid = sh.salesorderid
+    )
+
+    , gross_sales_check as (
+        select 
+            round(sum(gross_sales), 2) as actual_gross_sales_2011
+        from 
+            sales_2011
+    )
+
+select *
+from gross_sales_check
+where actual_gross_sales_2011 != 12646112.16
