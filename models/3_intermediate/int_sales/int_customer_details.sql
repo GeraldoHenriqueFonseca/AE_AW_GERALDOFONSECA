@@ -18,7 +18,7 @@ with
             , firstname
             , middlename
             , lastname
-            , TRIM(CONCAT(firstname, ' ', COALESCE(middlename, ''), ' ', lastname)) AS fullname
+            , fullname
         from {{ ref('stg_person') }}
 
     )

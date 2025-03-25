@@ -3,10 +3,10 @@ with
         select 
             businessentityid
             , persontype
-            , firstname
-            , middlename
-            , lastname
-            , TRIM(CONCAT(firstname, ' ', COALESCE(middlename, ''), ' ', lastname)) AS fullname
+            , cast(firstname as string) as firstname
+            , cast(middlename as string) as middlename
+            , cast(lastname as string) as lastname
+            , CONCAT(firstname, ' ', lastname) AS fullname
             , modifieddate
     from {{ source('stg_person', 'person') }}
     )

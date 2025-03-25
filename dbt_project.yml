@@ -37,12 +37,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   project_indicium_academy_aw:
     # Applies to all files under models/
+    marts:
+      +materialized: table
+      +schema: marts
+
     intermediate:
-      +schema: int
       +materialized: table
-    mart:
-      +schema: mart
-      +materialized: table
+      +schema: intermediate
+
     staging:
-      +schema: stg
-      +materialized: table
+      +materialized: view
+      +schema: staging

@@ -5,7 +5,7 @@ sources:
     schema: raw_adventure_works
     tables:
         - name: creditcard
-          description: "Informações sobre cartões de crédito utilizados nas vendas."
+          description: "Informações sobre cartões de crédito utilizados."
           columns:
           - name: creditcardid
             description: "Identificador único do cartão de crédito."
@@ -14,7 +14,7 @@ sources:
             - not_null
             
           - name: cardtype
-            description: "Tipo de cartão de crédito (ex: Visa, Mastercard)."
+            description: "Tipo de cartão de crédito."
             
           - name: modifieddate
             description: "Data da última modificação do registro."
