@@ -1,0 +1,87 @@
+erDiagram
+    DIM_PRODUCT {
+        int productid PK
+        string sk_product PK
+        int productsubcategoryid
+        int productcategoryid
+        string product_name
+        string product_subcategory
+        string product_category
+        float listprice
+    }
+    FACT_SALES_HEADER {
+        int sales_order_id PK
+        string fk_region FK
+        string fk_credit_card FK
+        string fk_customer FK
+        string fk_calendar FK
+        date order_date
+        date due_date
+        date ship_date
+        string order_status
+        string sales_channel
+        float subtotal
+        float tax_amount
+        float freight
+        float total_due
+    }
+    FACT_SALES_DETAIL {
+        string fk_product FK
+        int salesorderid
+        int salesorderdetailid
+        int orderqty
+        int productid
+        float unitprice
+        float unitpricediscount
+        float linetotal
+    }
+    DIM_CUSTOMERS {
+        int customerid PK
+        string sk_customer PK
+        int businessentityid
+        int storeid
+        string persontype
+        string firstname
+        string middlename
+        string lastname
+        string fullname
+    }
+    DIM_CREDIT_CARD{
+        int credictcardid PK
+        string sk_creditcard PK
+        string cardtype
+        int businessentityid
+    }
+    DIM_REGION{
+        string sk_region PK
+        int addressid PK
+        string addressline
+        string city
+        int stateprovinceid
+        string countryregioncode
+        string country_name
+        string name_province
+        string stateprovincecode
+        int territoryid
+        string region_name
+        string continent
+        float salesytd
+        float saleslastyear
+    }
+    DIM_REASON{
+        string sk_reason PK
+        int salesorderid PK
+        string promotion_names_agg
+        string reason_types_agg
+    }
+    DIM_CALENDAR{
+        string sk_calendar PK
+        date date_day
+    }
+    FACT_SALES_HEADER o{--|| DIM_CUSTOMERS : ""
+    DIM_PRODUCT ||--o{ FACT_SALES_DETAIL : ""
+    FACT_SALES_DETAIL o{--|| FACT_SALES_HEADER : ""
+    DIM_CREDIT_CARD ||--o{ FACT_SALES_HEADER : ""
+    DIM_REGION ||--o{ FACT_SALES_HEADER : ""
+    DIM_REASON ||--|{FACT_SALES_HEADER : ""
+    DIM_CALENDAR ||--|{ FACT_SALES_HEADER : ""
