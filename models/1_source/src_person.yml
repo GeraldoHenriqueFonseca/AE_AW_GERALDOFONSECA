@@ -14,9 +14,7 @@ sources:
               - not_null
 
           - name: persontype
-            description: > 
-              "Tipo primário de pessoa: SC = Contato da loja, IN = Cliente individual (varejo), SP = Vendedor,
-              EM = Funcionário (não vendas), VC = Contato do fornecedor, GC = Contato geral"
+            description: "Tipo de pessoa"
 
           - name: firstname
             description: "Primeiro nome."

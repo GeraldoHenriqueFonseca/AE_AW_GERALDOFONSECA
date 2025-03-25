@@ -5,7 +5,7 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: product
-        description: "Tabela com informações de produtos, incluindo categorias, preços e datas de modificação."
+        description: "Tabela com informações de produtos: categorias, preços."
         columns:
           - name: productid
             description: "ID único do produto."
