@@ -6,7 +6,7 @@ with
             , firstname
             , middlename
             , lastname
-            , TRIM(CONCAT(firstname, ' ', COALESCE(middlename, ''), ' ', lastname)) AS fullname
+            , CONCAT(firstname, ' ', lastname) AS fullname
             , modifieddate
     from {{ source('stg_person', 'person') }}
     )

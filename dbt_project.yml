@@ -45,4 +45,4 @@ models:
       +materialized: table
     staging:
       +schema: stg
-      +materialized: table
+      +materialized: view
