@@ -53,15 +53,14 @@ Além dessas pessoas, o diretor de TI, Nilson Ramos, é responsável por garanti
 - Foi criado testes para avaliar se havia duplicação e chave nulas, caso tivesse algum problema não seria carregado dados errados para os marts
  
  - Além dos testes de unicidade e não nulo foi feito um teste para avaliar se a carga dos dados tinha sido feita corretamente. Fez o cálculo das vendas brutas no ano de 2011 e essa conta deveria ser de $12.646.112,16. Caso não obtesse esse valor era gerado um aviso de erro.
+   - Modelo star_schema
+    ![star_schema](cea_aw_er_ghfonseca.png)
+   - Markdown utilizado no Mermaid para gerar o esquema
+   [mermaid_md](cea_aw_er_ghfonseca.mmd)
 
 #### 2. Construção do dashboard
 - Power BI foi conecatado ao Snowflake e consumiu as tabelas de dimensões e fatos do marts
  
-  - Modelo star_schema
- ![star_schema](cea_aw_er_ghfonseca.png)
-  - Markdown utilizado no Mermaid para gerar o esquema
-  [mermaid_md](cea_aw_er_ghfonseca.mmd)
-
  - Foram respondidas as perguntas de negócio
 
     a - Qual o número de pedidos, quantidade comprada, valor total negociado por produto, tipo de cartão, motivo de venda, data de venda, cliente, status, cidade, estado e país?
