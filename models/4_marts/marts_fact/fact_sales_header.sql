@@ -34,16 +34,16 @@ with
 
     , fact_sales_header as (
         select 
-            salesheader.salesorderid as sales_order_id
+            salesheader.salesorderid
             , dim_region.sk_region as fk_region
             , dim_credit_card.sk_credit_card as fk_credit_card
             , dim_customers.sk_customer as fk_customer
             , dim_calendar.sk_calendar as fk_calendar
-            , ifnull(dim_reason.promotion_names_agg, 'Não informado') as reason_agg
+            , ifnull(dim_reason.promotion_names_agg, 'não informado') as reason_agg
             , dim_reason.reason_types_agg as reason_types_agg
-            , salesheader.orderdate as order_date
-            , salesheader.duedate as due_date
-            , salesheader.shipdate as ship_date
+            , salesheader.orderdate
+            , salesheader.duedate
+            , salesheader.shipdate
             , case
                 when salesheader.status = 1 then 'Em processo'
                 when salesheader.status = 2 then 'Aprovado'
@@ -54,12 +54,12 @@ with
             end as order_status
             , case
                 when salesheader.onlineorderflag = true then 'Online'
-                when salesheader.onlineorderflag = false then 'Físico'
+                when salesheader.onlineorderflag = false then 'Physical'
             end as sales_channel
             , salesheader.subtotal
-            , salesheader.taxamt as tax_amount
+            , salesheader.taxamt
             , salesheader.freight
-            , salesheader.totaldue as total_due
+            , salesheader.totaldue
         from {{ ref('stg_orderheader') }} as salesheader
         left join dim_region
             on salesheader.billtoaddressid = dim_region.addressid

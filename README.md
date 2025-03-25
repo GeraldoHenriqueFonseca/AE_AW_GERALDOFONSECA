@@ -40,18 +40,17 @@ Além dessas pessoas, o diretor de TI, Nilson Ramos, é responsável por garanti
 
 - Foram criadas as dimensões:
    - Relacionadas ao clientes:
-      - DIM_PESSOA
-      - DIM_ENDERECO
+      - DIM_CUSTOMERS
+      - DIM_REGION
    - Relacionadas a vendas:
-      - DIM_CARTAO_CREDITO
-      - DIM_RAZAO_VENDA
-      - DIM_SOLICITACAO_VENDA
+      - DIM_CREDIT_CARD
+      - DIM_REASON
    - Relacioanda ao produto/pedido: 
-      - DIM_PRODUTO
-- Foi criada a FATO_VENDA para quando relacionar com as dimensões consiga responder as perguntas que o negócio pediu para estar no dashboard.
+      - DIM_PRODUCT
+- Foi criada a FACT_SALES_HEADER e FACT_SALES_DETAIL (possui os detalhes da venda) para quando relacionar com as dimensões consiga responder as perguntas que o negócio pediu para estar no dashboard.
 
 
-- Foi criado testes para avaliar se havia duplicação e chave nulas, caso tive algum problema não seria carregado dados errados para os marts
+- Foi criado testes para avaliar se havia duplicação e chave nulas, caso tivesse algum problema não seria carregado dados errados para os marts
  
  - Além dos testes de unicidade e não nulo foi feito um teste para avaliar se a carga dos dados tinha sido feita corretamente. Fez o cálculo das vendas brutas no ano de 2011 e essa conta deveria ser de $12.646.112,16. Caso não obtesse esse valor era gerado um aviso de erro.
 
@@ -61,6 +60,134 @@ Além dessas pessoas, o diretor de TI, Nilson Ramos, é responsável por garanti
   - Modelo star_schema
  ![star_schema](star_schema.png)
 
+erDiagram
+   CUSTOMER {
+        id INT PK
+        email VARCHAR
+        password VARCHAR
+    }
+
+    BUYER {
+        id INT PK
+    }
+
+    BUSINESS_CLIENT {
+        id INT PK
+    }
+
+    ADMINISTRATOR {
+        id INT PK
+    }
+
+    PRODUCT {
+        id INT PK
+    }
+
+    CART {
+        id INT PK
+        customer_id INT FK
+    }
+
+    ORDER {
+        id INT PK
+        customer_id INT FK
+    }
+
+    REVIEW {
+        id INT PK
+        buyer_id INT FK
+        product_id INT FK
+    }
+
+    WISHLIST {
+        id INT PK
+        buyer_id INT FK
+        product_id INT FK
+    }
+
+    SUPPORT_TICKET {
+        id INT PK
+        customer_id INT FK
+    }
+
+    USER_ACCOUNT {
+        id INT PK
+    }
+
+    PRODUCT_CATALOG {
+        id INT PK
+    }
+
+    PRODUCT_CATEGORY {
+        id INT PK
+    }
+
+    SPECIFICATION {
+        id INT PK
+        product_id INT FK
+    }
+
+    ORDER_SHIPMENT {
+        id INT PK
+        business_client_id INT FK
+    }
+
+    DELIVERY_ADDRESS {
+        id INT PK
+        business_client_id INT FK
+    }
+
+    INVOICE {
+        id INT PK
+        business_client_id INT FK
+    }
+
+    ANALYTICS {
+        id INT PK
+        business_client_id INT FK
+    }
+
+    WEBSITE_TRAFFIC {
+        id INT PK
+    }
+
+    USER_ACTIVITY {
+        id INT PK
+    }
+
+    SALES_REPORT {
+        id INT PK
+    }
+
+    CUSTOMER ||--|{ BUYER
+    CUSTOMER ||--|{ BUSINESS_CLIENT
+    CUSTOMER ||--|{ ADMINISTRATOR
+    CUSTOMER ||--|| CART
+    CUSTOMER ||--|| ORDER
+    CUSTOMER ||--|| SUPPORT_TICKET
+    CUSTOMER ||--|| USER_ACCOUNT
+
+    BUYER }|--|{ REVIEW
+    BUYER }|--|{ WISHLIST
+
+    BUSINESS_CLIENT ||--|| ORDER_SHIPMENT
+    BUSINESS_CLIENT ||--|| DELIVERY_ADDRESS
+    BUSINESS_CLIENT ||--|| INVOICE
+    BUSINESS_CLIENT ||--|| ANALYTICS
+
+    PRODUCT_CATALOG ||--|| PRODUCT
+    PRODUCT_CATEGORY ||--|| PRODUCT
+    PRODUCT ||--|| SPECIFICATION
+
+    ADMINISTRATOR ||--|| PRODUCT_CATALOG
+    ADMINISTRATOR ||--|| PRODUCT_CATEGORY
+    ADMINISTRATOR ||--|| SPECIFICATION
+    ADMINISTRATOR ||--|| ORDER
+    ADMINISTRATOR ||--|| SUPPORT_TICKET
+    ADMINISTRATOR ||--|| USER_ACCOUNT
+    ADMINISTRATOR ||--|| WEBSITE_TRAFFIC
+    ADMINISTRATOR ||--|| USER_ACTIVITY
+    ADMINISTRATOR ||--|| SALES_REPORT
  - Foram respondidas as perguntas de negócio
 
     a - Qual o número de pedidos, quantidade comprada, valor total negociado por produto, tipo de cartão, motivo de venda, data de venda, cliente, status, cidade, estado e país?

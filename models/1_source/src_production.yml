@@ -5,7 +5,7 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: product
-        description: "Tabela com informações de produtos: preço, descrição."
+        description: "Tabela com informações de produtos, incluindo categorias, preços e datas de modificação."
         columns:
           - name: productid
             description: "ID único do produto."
@@ -17,10 +17,10 @@ sources:
             description: "O produto é um membro desta subcategoria de produto. Chave estrangeira para ProductSubCategory.ProductSubCategoryID."
 
           - name: product_name
-            description: "Nome do produto."
+            description: "Nome do produto no catálogo."
 
           - name: listprice
-            description: "Preço do produto."
+            description: "Preço de lista do produto."
 
           - name: modifieddate
             description: "Data da última atualização do produto."
@@ -44,7 +44,7 @@ sources:
             description: "Data da última atualização da subcategoria."
 
       - name: productcategory
-        description: "Tabela de categorias principais dos produtos."
+        description: "Tabela de categorias principais dos produtos para organização hierárquica."
         columns:
           - name: productcategoryid
             description: "ID da categoria do produto."
