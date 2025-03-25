@@ -4,7 +4,7 @@ models:
   - name: fact_sales_header
     description: "Informações gerais sobre pedidos de vendas."
     columns:
-      - name: sales_order_id
+      - name: salesorderid
         description: "Chave primeria."
         tests:  
           - unique
@@ -47,13 +47,13 @@ models:
       - name: reason_types_agg
         description: "Categoria à qual o motivo da venda pertence."
 
-      - name: order_date
+      - name: orderdate
         description: "Datas em que o pedido de venda foi criado."
 
-      - name: due_date
+      - name: duedate
         description: "Data em que o pedido deve ser entregue ao cliente."
 
-      - name: ship_date
+      - name: shipdate
         description: "Data em que o pedido foi enviado ao cliente."
 
       - name: order_status
@@ -65,11 +65,11 @@ models:
       - name: subtotal
         description: "Subtotal de vendas. Calculado como SUM(SalesOrderDetail.LineTotal) para o SalesOrderID apropriado."
 
-      - name: tax_amount
+      - name: taxamt
         description: "Valor do imposto."
 
       - name: freight
         description: "Custo de envio."
         
-      - name: total_due
+      - name: totaldue
         description: "Total devido pelo cliente. Calculado como Subtotal + TaxAmt + Frete."

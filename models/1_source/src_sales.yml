@@ -5,7 +5,7 @@ sources:
     schema: raw_adventure_works
     tables:
         - name: creditcard
-          description: "Informações sobre cartões de crédito utilizados."
+          description: "Informações sobre cartões de crédito utilizados nas vendas."
           columns:
           - name: creditcardid
             description: "Identificador único do cartão de crédito."
@@ -91,7 +91,7 @@ sources:
               description: "Status atual do pedido. 1 = Em processamento; 2 = Aprovado; 3 = Em espera; 4 = Rejeitado; 5 = Enviado; 6 = Cancelado"
 
             - name: onlineorderflag
-              description: "Indica de o pedido foi feito online, True (1) para sim e False(0) para não."
+              description: "0 = Pedido feito pelo vendedor. 1 = Pedido feito on-line pelo cliente."
 
             - name: creditcardid
               description: "Identificador do cartão de crédito utilizado."
@@ -180,13 +180,13 @@ sources:
               description: "Identificador do território do vendedor."
 
             - name: salesquota
-              description: "Meta de vendas."
+              description: "Meta de vendas do vendedor."
 
             - name: bonus
               description: "Bônus do vendedor baseado nas vendas."
 
             - name: commissionpct
-              description: "Porcentagem de comissão."
+              description: "Porcentagem de comissão do vendedor."
 
             - name: salesytd
               description: "Total de vendas no ano até a data."
