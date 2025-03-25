@@ -59,7 +59,7 @@ Além dessas pessoas, o diretor de TI, Nilson Ramos, é responsável por garanti
  
   - Modelo star_schema
  ![star_schema](cea_aw_er_ghfonseca.png)
-  - Mardow utilizado no Mermaid para gerar o esquema
+  - Markdown utilizado no Mermaid para gerar o esquema
   [mermaid_md](cea_aw_er_ghfonseca.mmd)
 
  - Foram respondidas as perguntas de negócio
